@@ -124,8 +124,7 @@ const about: About = {
         timeframe: "Ongoing",
         role: "Video Editor",
         achievements: [
-          <>Edited varied video content using Vegas Pro and CapCut to deliver clear storytelling.</>,
-          <>Collaborated with stakeholders to align pacing, graphics, and audio with project goals.</>,
+          <>Edited a variety of video content using Vegas Pro and CapCut.</>,
         ],
         images: [],
       },
