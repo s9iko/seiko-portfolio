@@ -15,7 +15,7 @@ import {
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, social } from "@/resources";
 import { Mailchimp, ScrollReveal } from "@/components";
-import AnimatedHeadline from "@/components/AnimatedHeadline";
+import TypingHeadline from "@/components/TypingHeadline";
 import styles from "./page.module.scss";
 export async function generateMetadata() {
   return Meta.generate({
@@ -30,9 +30,9 @@ export async function generateMetadata() {
 export default function Home() {
   return (
     <Column
-      maxWidth="m"
-      gap="xl"
-      paddingY="12"
+      maxWidth="s"
+      gap="56"
+      paddingY="32"
       horizontal="center"
       className={styles.animatedBackground}
       style={{ minHeight: "100vh", justifyContent: "center" }}
@@ -50,13 +50,47 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" gap="m">
-        <Column maxWidth="s" horizontal="center" align="center">
+      <Column fillWidth horizontal="center" gap="32">
+        <Column maxWidth="xs" horizontal="center" align="center" gap="28">
+          <RevealFx fillWidth horizontal="center" paddingTop="16" paddingBottom="24" paddingLeft="12">
+            <Row gap="8" horizontal="center" vertical="center">
+              <span className={styles.availableDot}></span>
+              <Text variant="body-default-m" onBackground="brand-strong">
+                Available for opportunities
+              </Text>
+            </Row>
+          </RevealFx>
+          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="8">
+            <TypingHeadline greeting={home.headlineGreeting} name={home.headlineName} speed={150} pause={600} />
+          </RevealFx>
+
+          <RevealFx translateY={8} delay={0.2} fillWidth horizontal="center" paddingBottom="32">
+            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+              {home.subline}
+            </Text>
+          </RevealFx>
+          <RevealFx translateY={10} delay={0.25} horizontal="center" paddingBottom="16">
+            <Button
+              id="about"
+              data-border="rounded"
+              href={about.path}
+              variant="secondary"
+              size="m"
+              weight="default"
+              arrowIcon
+              className={styles.buttonHover}
+            >
+              <Row gap="8" vertical="center" paddingRight="4">
+                {/* Avatar removed as requested */}
+                {about.title}
+              </Row>
+            </Button>
+          </RevealFx>
           {home.featured.display && (
             <RevealFx
               fillWidth
               horizontal="center"
-              paddingTop="16"
+              paddingTop="8"
               paddingBottom="24"
               paddingLeft="12"
             >
@@ -74,49 +108,9 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="8">
-            <AnimatedHeadline text={home.headline} />
-          </RevealFx>
-          <RevealFx translateY={6} delay={0.1} fillWidth horizontal="center" paddingBottom="24">
-            <Row gap="8" horizontal="center" vertical="center">
-              <span className={styles.availableDot}></span>
-              <Text variant="body-default-m" onBackground="brand-strong">
-                Available for opportunities
-              </Text>
-            </Row>
-          </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="24">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {home.subline}
-            </Text>
-          </RevealFx>
-          <RevealFx translateY={10} delay={0.25} horizontal="center" paddingBottom="32">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-              className={styles.buttonHover}
-            >
-              <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Row>
-            </Button>
-          </RevealFx>
-          <RevealFx translateY="12" delay={0.3} fillWidth horizontal="center" paddingBottom="16">
-            <Column gap="12" horizontal="center" align="center">
-              <Row gap="12" wrap horizontal="center">
+          <RevealFx translateY="12" delay={0.3} fillWidth horizontal="center" paddingBottom="32">
+            <Column gap="20" horizontal="center" align="center">
+              <Row gap="16" wrap horizontal="center">
                 <Tag size="l" prefixIcon="react" className={styles.tag}>React</Tag>
                 <Tag size="l" prefixIcon="nodejs" className={styles.tag}>Node.js</Tag>
                 <Tag size="l" prefixIcon="mongodb" className={styles.tag}>MongoDB</Tag>
@@ -125,21 +119,7 @@ export default function Home() {
               </Row>
             </Column>
           </RevealFx>
-          <RevealFx translateY="12" delay={0.4} fillWidth horizontal="center" paddingBottom="32">
-            <Column gap="16" fillWidth>
-              <Row gap="16" wrap horizontal="center">
-                <Column gap="8" align="center" className={styles.statCard} paddingX="20" paddingY="16">
-                  <Text variant="display-strong-s" onBackground="brand-strong">4+</Text>
-                  <Text variant="body-default-s" onBackground="neutral-weak" align="center">Years Learning</Text>
-                </Column>
-                <Column gap="8" align="center" className={styles.statCard} paddingX="20" paddingY="16">
-                  <Text variant="display-strong-s" onBackground="brand-strong">3.60</Text>
-                  <Text variant="body-default-s" onBackground="neutral-weak" align="center">Dean's Lister</Text>
-                </Column>
-              </Row>
-            </Column>
-          </RevealFx>
-          <RevealFx translateY="12" delay={0.5} fillWidth horizontal="center" paddingBottom="16">
+          <RevealFx translateY="12" delay={0.5} fillWidth horizontal="center" paddingBottom="0">
             <Button
               href="/TorrenoResume-FINAL.pdf"
               variant="primary"

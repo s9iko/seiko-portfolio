@@ -91,8 +91,10 @@ export interface Home extends BasePageConfig {
    * The image needs to be put inside `/public/images/` directory
    */
   image: `/images/${string}` | string;
-  /** The headline of the home page */
-  headline: string;
+  /** The greeting part of the headline */
+  headlineGreeting: string;
+  /** The name part of the headline */
+  headlineName: string;
   /** Featured badge, which appears above the headline */
   featured: {
     display: boolean;
