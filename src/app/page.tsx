@@ -51,7 +51,7 @@ export default function Home() {
         }}
       />
       <Column fillWidth horizontal="center" gap="32">
-        <Column maxWidth="xs" horizontal="center" align="center" gap="28">
+        <Column maxWidth="xs" horizontal="center" align="center" gap="-1">
           <RevealFx fillWidth horizontal="center" paddingTop="16" paddingBottom="24" paddingLeft="12">
             <Row gap="8" horizontal="center" vertical="center">
               <span className={styles.availableDot}></span>
