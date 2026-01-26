@@ -207,8 +207,10 @@ export interface About extends BasePageConfig {
         /** Image height ratio */
         height: number;
       }>;
+    }>;
+  };
   /** Soft skills section */
-  softSkills: {
+  softSkills?: {
     /** Whether to display soft skills */
     display: boolean;
     /** Title for the soft skills section */
@@ -217,6 +219,7 @@ export interface About extends BasePageConfig {
     skills: string[];
   };
 }
+
 /**
  * Blog page configuration.
  * @description Configuration for the Blog page, including metadata and navigation label.
@@ -244,11 +247,3 @@ export interface Gallery extends BasePageConfig {
     orientation: string;
   }>;
 }
-
-
-
-
-
-
-
-

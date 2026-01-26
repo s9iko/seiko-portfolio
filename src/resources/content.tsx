@@ -232,18 +232,6 @@ const about: About = {
       },
     ],
   },
-  softSkills: {
-    display: true,
-    title: "Soft skills",
-    skills: [
-      "Teamwork",
-      "Effective Communication",
-      "Critical Thinking",
-      "Problem-Solving",
-      "Adaptability",
-      "Time Management",
-    ],
-  },
 };
 
 const blog: Blog = {
@@ -316,3 +304,4 @@ const gallery: Gallery = {
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery, contact };
+
