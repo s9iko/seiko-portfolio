@@ -15,7 +15,6 @@ import {
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, social } from "@/resources";
 import { Mailchimp } from "@/components";
-import { Projects } from "@/components/work/Projects";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -143,9 +142,29 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+        <Column fillWidth gap="24" horizontal="center" align="center" paddingTop="40">
+          <Line maxWidth="s" />
+          <Column gap="8" horizontal="center" align="center">
+            <Heading variant="heading-strong-l">Let's Connect</Heading>
+            <Text variant="body-default-m" onBackground="neutral-weak" align="center">
+              Feel free to reach out for collaborations or just a friendly chat
+            </Text>
+          </Column>
+          <Row gap="12" wrap horizontal="center">
+            {social.map((link) => (
+              <Button
+                key={link.name}
+                href={link.link}
+                variant="secondary"
+                size="m"
+                prefixIcon={link.icon}
+              >
+                {link.name}
+              </Button>
+            ))}
+          </Row>
+        </Column>
       </RevealFx>
-      <Projects range={[2]} />
     </Column>
   );
 }

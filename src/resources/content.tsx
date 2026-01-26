@@ -37,6 +37,18 @@ const social: Social = [
     essential: true,
   },
   {
+    name: "Facebook",
+    icon: "facebook",
+    link: "https://www.facebook.com/vghntrrno/",
+    essential: true,
+  },
+  {
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/vghntrrno/?theme=dark",
+    essential: true,
+  },
+  {
     name: "Email",
     icon: "email",
     link: `mailto:${person.email}`,
@@ -48,7 +60,7 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
+  title: `s9iko's Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Let's build something great together</>,
   featured: {
