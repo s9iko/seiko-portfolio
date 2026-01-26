@@ -1,0 +1,69 @@
+---
+title: "Chiqui's Garden - E-commerce Platform"
+publishedAt: "2025-12-15"
+summary: "A full-stack e-commerce platform for an organic gardening business, featuring product catalog, shopping cart, payment integration, and admin dashboard."
+images:
+  - "/images/projects/project-01/project1-1.jpg"
+  - "/images/projects/project-01/project1-2.jpg"
+  - "/images/projects/project-01/project1-3.jpg"
+  - "/images/projects/project-01/project1-4.jpg"
+  - "/images/projects/project-01/project1-5.jpg"
+  - "/images/projects/project-01/project1-6.jpg"
+link: "https://chiquis-garden.shop/"
+team:
+  - name: "Vaughn Benedict Torreno"
+    role: "Full-Stack Developer"
+    avatar: "/images/avatar.jpg"
+---
+
+## Overview
+
+Chiqui's Garden is a modern, responsive e-commerce platform for a plant nursery business, built with a comprehensive tech stack to deliver a production-ready solution. The project demonstrates full-stack development capabilities, from intuitive frontend design to resilient backend architecture, including real-time features and secure payment processing.
+
+## Key Features
+
+**Frontend & User Experience:**
+- **React.js with Framer Motion**: Built interactive, animated interfaces that enhance user engagement and create a premium experience.
+- **Admin Dashboards**: Comprehensive dashboards for inventory management, order processing, and business analytics.
+- **Product Catalog**: Dynamic product display with filtering, search, and categorization for easy browsing of plants and gardening supplies.
+- **Shopping Cart & Checkout**: Seamless shopping experience with persistent cart, quantity management, and a secure checkout process.
+- **Real-time Features**: Integrated Socket.IO for live admin monitoring and instant order updates.
+- **Payment Integration**: PayMongo payment gateway integration for seamless and secure transactions.
+- **Image Optimization**: Cloudinary integration for efficient image storage and delivery.
+- **Advanced Features**: Dynamic delivery calculations and loyalty rewards system.
+- **Mobile-Responsive Design**: Optimized for all devices with a mobile-first approach.
+
+**Backend & Infrastructure:**
+- **Scalable RESTful API**: Built with Node.js and Express, featuring complex schema design and resilient architecture.
+- **Secure Authentication**: JWT-based authentication with bcrypt password hashing and advanced middleware.
+- **Payment Processing**: PayMongo integration with webhook verification and specialized background retry worker to improve payment reliability and reduce failure incidents.
+- **Real-time Admin Monitoring**: Socket.IO for instant notifications and dashboard updates.
+- **Production Deployment**: Successfully deployed to Vercel with optimized performance and reliability.
+
+## Technologies Used
+
+- **Frontend**: React.js, Framer Motion, Socket.IO (real-time)
+- **Backend**: Node.js, Express.js, MongoDB
+- **Database**: MongoDB (with complex schema design)
+- **Authentication**: JWT, Bcrypt
+- **Payments**: PayMongo (with webhook verification)
+- **Image Management**: Cloudinary
+- **Real-time Communication**: Socket.IO
+- **Hosting**: Vercel
+- **Design**: Intuitive UI/UX with responsive design
+
+## Challenges and Learnings
+
+A major challenge was implementing a robust payment system with PayMongo, including webhook verification and a specialized background retry worker to handle payment failures. This significantly improved payment reliability and reduced transaction failure incidents. 
+
+Building complex MongoDB schemas for inventory management, order processing, and customer data required careful planning and optimization. Implementing real-time features with Socket.IO for admin monitoring taught me about WebSocket handling, event emitting, and maintaining efficient socket connections.
+
+Additionally, optimizing image delivery with Cloudinary and ensuring mobile responsiveness across diverse devices and connection speeds was valuable for understanding performance optimization and responsive design principles.
+
+## Outcome
+
+Chiqui's Garden is now a fully functional, production-ready e-commerce platform successfully serving customers. The platform handles real transactions, manages complex inventory, provides real-time admin monitoring, and delivers a smooth, engaging user experience. The implementation of a specialized payment retry worker significantly improved transaction reliability, demonstrating sophisticated problem-solving in production environments.
+
+This capstone project showcases the ability to architect and implement a complete e-commerce solution from concept to production deployment, integrating multiple technologies and handling real-world business requirements at scale.
+
+Visit the live platform: https://chiquis-garden.shop/

@@ -2,20 +2,28 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Vaughn Benedict",
+  lastName: "Torreno",
+  name: "Vaughn Benedict Torreno",
+  role: "Junior Web Developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "vaughntorreno@gmail.com",
+  location: "Asia/Manila", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Tagalog"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Occasional notes on building full-stack projects and honing craft</>,
+};
+
+const contact = {
+  display: true,
+  title: <>Get in Touch</>,
+  description: <>Let's build something great together. Feel free to reach out!</>,
+  email: person.email,
+  location: person.location,
 };
 
 const social: Social = [
@@ -25,25 +33,7 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://github.com/s9iko",
     essential: true,
   },
   {
@@ -60,24 +50,14 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Let's build something great together</>,
   featured: {
     display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
-      </Row>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    title: <>Check out my projects</>,
+    href: "/work",
   },
   subline: (
-    <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+    <>Student developer focused on learning and building real-world projects.</>
   ),
 };
 
@@ -94,7 +74,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -102,9 +82,8 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Motivated Junior Full-Stack Developer with MERN stack experience. 
+        Strong programming foundation and an eye for UI design, eager to contribute and grow within a collaborative development team.
       </>
     ),
   },
@@ -113,42 +92,41 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Web Development",
+        timeframe: "Ongoing",
+        role: "Junior Web Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Developed and deployed web projects with a focus on performance, responsiveness, and
+            smooth user experience.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Built full-stack features across MERN and ASP.NET stacks, ensuring clean, maintainable
+            code.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Video Editing",
+        timeframe: "Ongoing",
+        role: "Video Editor",
+        achievements: [
+          <>Edited varied video content using Vegas Pro and CapCut to deliver clear storytelling.</>,
+          <>Collaborated with stakeholders to align pacing, graphics, and audio with project goals.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "UI/UX & Graphic Design",
+        timeframe: "Ongoing",
+        role: "Designer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Designed user interfaces and digital graphics using Figma, Canva, Adobe Illustrator, and
+            Photoshop.
           </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+          <>Created assets and layouts that kept products visually consistent and easy to use.</>,
         ],
         images: [],
       },
@@ -159,12 +137,18 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "De La Salle University – Dasmarinas",
+        description: (
+          <>Bachelor of Science in Information Technology (Dean's Lister, GPA 3.60/4.00).</>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Senior High School – STEM",
+        description: <>With High Honors.</>,
+      },
+      {
+        name: "Junior High School",
+        description: <>With Honors.</>,
       },
     ],
   },
@@ -173,60 +157,66 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Full-stack Web Development",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Build and ship responsive web apps with MERN and ASP.NET (Web Forms, MVC, Core).</>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "React", icon: "react" },
+          { name: "Node.js", icon: "nodejs" },
+          { name: "ASP.NET", icon: "code" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
+        title: "Programming Languages",
+        description: <>Work in C#, JavaScript, PHP, Python, and HTML.</>,
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "C#", icon: "dotnet" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "PHP", icon: "php" },
+          { name: "Python", icon: "python" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Databases",
+        description: <>Model and manage data with MongoDB and MySQL.</>,
+        tags: [
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "MySQL", icon: "mysql" },
         ],
+        images: [],
+      },
+      {
+        title: "Mobile Development",
+        description: <>Prototype mobile experiences with Flutter and Android Studio.</>,
+        tags: [
+          { name: "Flutter", icon: "flutter" },
+          { name: "Android", icon: "code" },
+        ],
+        images: [],
+      },
+      {
+        title: "UI/UX & Design",
+        description: <>Design interfaces and graphics in Figma, Canva, Photoshop, and Illustrator.</>,
+        tags: [
+          { name: "Figma", icon: "figma" },
+          { name: "Canva", icon: "sparkles" },
+          { name: "Photoshop", icon: "photoshop" },
+          { name: "Illustrator", icon: "illustrator" },
+        ],
+        images: [],
+      },
+      {
+        title: "Video Editing",
+        description: <>Edit and finish content in Vegas Pro and CapCut.</>,
+        tags: [
+          { name: "Vegas Pro", icon: "sparkles" },
+          { name: "CapCut", icon: "sparkles" },
+        ],
+        images: [],
       },
     ],
   },
@@ -301,4 +291,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, contact };

@@ -1,4 +1,4 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { Column, Heading, Meta, Schema, RevealFx } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 
@@ -28,10 +28,14 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Heading marginBottom="l" variant="heading-strong-xl" align="center">
-        {work.title}
-      </Heading>
-      <Projects />
+      <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="24">
+        <Heading marginBottom="l" variant="heading-strong-xl" align="center">
+          {work.title}
+        </Heading>
+      </RevealFx>
+      <RevealFx translateY="8" delay={0.2}>
+        <Projects />
+      </RevealFx>
     </Column>
   );
 }

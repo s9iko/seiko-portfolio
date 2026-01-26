@@ -11,6 +11,7 @@ import {
   Meta,
   Schema,
   Row,
+  RevealFx,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
@@ -77,6 +78,7 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
+      <RevealFx speed="fast" translateY="2" delay={0} style={{ width: '100%' }}>
       <Row fillWidth s={{ direction: "column"}} horizontal="center">
         {about.avatar.display && (
           <Column
@@ -337,6 +339,7 @@ export default function About() {
           )}
         </Column>
       </Row>
+      </RevealFx>
     </Column>
   );
 }

@@ -10,11 +10,12 @@ import {
   Schema,
   Meta,
   Line,
+  Icon,
+  Tag,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
+import { home, about, person, baseURL, social } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
-import { Posts } from "@/components/blog/Posts";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -75,7 +76,48 @@ export default function Home() {
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
+          <RevealFx translateY="12" delay={0.3} fillWidth horizontal="center" paddingBottom="24">
+            <Row gap="12" wrap horizontal="center">
+              <Tag size="l" prefixIcon="react">React</Tag>
+              <Tag size="l" prefixIcon="nodejs">Node.js</Tag>
+              <Tag size="l" prefixIcon="mongodb">MongoDB</Tag>
+              <Tag size="l" prefixIcon="dotnet">.NET</Tag>
+              <Tag size="l" prefixIcon="flutter">Flutter</Tag>
+            </Row>
+          </RevealFx>
+          <RevealFx translateY="12" delay={0.35} fillWidth horizontal="center" paddingBottom="24">
+            <Row gap="24" wrap horizontal="center">
+              <Column gap="4" align="center">
+                <Text variant="heading-strong-xl" onBackground="brand-strong">4+</Text>
+                <Text variant="body-default-s" onBackground="neutral-weak">Years Learning</Text>
+              </Column>
+              <Column gap="4" align="center">
+                <Text variant="heading-strong-xl" onBackground="brand-strong">3.60</Text>
+                <Text variant="body-default-s" onBackground="neutral-weak">Dean's Lister</Text>
+              </Column>
+            </Row>
+          </RevealFx>
+          <RevealFx translateY="12" delay={0.4} fillWidth horizontal="center" paddingBottom="16">
+            <Row gap="12" wrap horizontal="center">
+              <Button
+                href="/TorrenoResume-FINAL.pdf"
+                variant="primary"
+                size="m"
+                prefixIcon="download"
+              >
+                Download Resume
+              </Button>
+              <Button
+                href={social.find(s => s.name === "GitHub")?.link || "https://github.com"}
+                variant="secondary"
+                size="m"
+                prefixIcon="github"
+              >
+                View GitHub
+              </Button>
+            </Row>
+          </RevealFx>
+          <RevealFx paddingTop="12" delay={0.5} horizontal="center" paddingLeft="12">
             <Button
               id="about"
               data-border="rounded"
@@ -103,28 +145,7 @@ export default function Home() {
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
-      {routes["/blog"] && (
-        <Column fillWidth gap="24" marginBottom="l">
-          <Row fillWidth paddingRight="64">
-            <Line maxWidth={48} />
-          </Row>
-          <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
-            <Row flex={1} paddingLeft="l" paddingTop="24">
-              <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                Latest from the blog
-              </Heading>
-            </Row>
-            <Row flex={3} paddingX="20">
-              <Posts range={[1, 2]} columns="2" />
-            </Row>
-          </Row>
-          <Row fillWidth paddingLeft="64" horizontal="end">
-            <Line maxWidth={48} />
-          </Row>
-        </Column>
-      )}
       <Projects range={[2]} />
-      <Mailchimp />
     </Column>
   );
 }
