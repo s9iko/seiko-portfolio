@@ -1,6 +1,6 @@
 import { getPosts } from "@/utils/utils";
 import { Column } from "@once-ui-system/core";
-import { ProjectCard } from "@/components";
+import { ProjectCard, ScrollReveal } from "@/components";
 
 interface ProjectsProps {
   range?: [number, number?];
@@ -26,16 +26,17 @@ export function Projects({ range, exclude }: ProjectsProps) {
   return (
     <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
       {displayedProjects.map((post, index) => (
-        <ProjectCard
-          priority={index < 2}
-          key={post.slug}
-          href={`/work/${post.slug}`}
-          images={post.metadata.images}
-          title={post.metadata.title}
-          description={post.metadata.summary}
-          content={post.content}
-          link={post.metadata.link || ""}
-        />
+        <ScrollReveal key={post.slug}>
+          <ProjectCard
+            priority={index < 2}
+            href={`/work/${post.slug}`}
+            images={post.metadata.images}
+            title={post.metadata.title}
+            description={post.metadata.summary}
+            content={post.content}
+            link={post.metadata.link || ""}
+          />
+        </ScrollReveal>
       ))}
     </Column>
   );

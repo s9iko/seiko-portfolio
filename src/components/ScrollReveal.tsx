@@ -40,6 +40,11 @@ export function ScrollReveal({ children, className = '' }: ScrollRevealProps) {
     <div
       ref={ref}
       className={`${className} ${isVisible ? 'scroll-reveal-visible' : 'scroll-reveal-hidden'}`}
+      style={{
+        transition: 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.95)',
+      }}
     >
       {children}
     </div>
