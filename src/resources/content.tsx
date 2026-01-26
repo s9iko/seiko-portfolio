@@ -62,7 +62,7 @@ const home: Home = {
   label: "Home",
   title: `s9iko's Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Hello! I'm Vaughn</>,
+  headline: "Hello! I'm Vaughn",
   featured: {
     display: true,
     title: <>Check out my projects</>,
@@ -232,6 +232,18 @@ const about: About = {
       },
     ],
   },
+  softSkills: {
+    display: true,
+    title: "Soft skills",
+    skills: [
+      "Teamwork",
+      "Effective Communication",
+      "Critical Thinking",
+      "Problem-Solving",
+      "Adaptability",
+      "Time Management",
+    ],
+  },
 };
 
 const blog: Blog = {
@@ -304,4 +316,3 @@ const gallery: Gallery = {
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery, contact };
-

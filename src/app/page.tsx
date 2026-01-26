@@ -15,8 +15,8 @@ import {
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, social } from "@/resources";
 import { Mailchimp, ScrollReveal } from "@/components";
+import AnimatedHeadline from "@/components/AnimatedHeadline";
 import styles from "./page.module.scss";
-
 export async function generateMetadata() {
   return Meta.generate({
     title: home.title,
@@ -29,7 +29,14 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center" className={styles.animatedBackground}>
+    <Column
+      maxWidth="m"
+      gap="xl"
+      paddingY="12"
+      horizontal="center"
+      className={styles.animatedBackground}
+      style={{ minHeight: "100vh", justifyContent: "center" }}
+    >
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -68,9 +75,7 @@ export default function Home() {
             </RevealFx>
           )}
           <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="8">
-            <Heading wrap="balance" variant="display-strong-xl" className={styles.headline}>
-              {home.headline}
-            </Heading>
+            <AnimatedHeadline text={home.headline} />
           </RevealFx>
           <RevealFx translateY={6} delay={0.1} fillWidth horizontal="center" paddingBottom="24">
             <Row gap="8" horizontal="center" vertical="center">
@@ -147,15 +152,15 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
-      <ScrollReveal className={styles.scrollRevealSection}>
+      <ScrollReveal className={`${styles.scrollRevealSection} ${styles.connectSection}`}>
         <Column fillWidth gap="32" horizontal="center" align="center" paddingTop="xl">
-          <Column gap="16" horizontal="center" align="center" maxWidth="s">
-            <Heading variant="display-strong-m">Let's Connect</Heading>
+          <Column gap="12" horizontal="center" align="center" maxWidth="s">
+            <Heading variant="display-strong-m" className={styles.connectHeading}>Let's Connect</Heading>
             <Text variant="body-default-l" onBackground="neutral-weak" align="center">
               Feel free to reach out — I'm always open to new opportunities and conversations
             </Text>
           </Column>
-          <Row gap="16" wrap horizontal="center">
+          <Row gap="16" wrap horizontal="center" className={styles.socialRow}>
             {social.map((link) => (
               <Button
                 key={link.name}
