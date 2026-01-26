@@ -13,7 +13,7 @@ import {
   Avatar,
   Media,
   Line,
-import { notFound } from "next/navigation";
+} from "@once-ui/components";
 
 export async function generateStaticParams() {
   return [];
