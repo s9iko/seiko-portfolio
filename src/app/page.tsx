@@ -15,6 +15,7 @@ import {
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, social } from "@/resources";
 import { Mailchimp } from "@/components";
+import styles from "./page.module.scss";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -28,7 +29,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
+    <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center" className={styles.animatedBackground}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -65,58 +66,7 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
-              {home.headline}
-            </Heading>
-          </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {home.subline}
-            </Text>
-          </RevealFx>
-          <RevealFx translateY="12" delay={0.3} fillWidth horizontal="center" paddingBottom="24">
-            <Row gap="12" wrap horizontal="center">
-              <Tag size="l" prefixIcon="react">React</Tag>
-              <Tag size="l" prefixIcon="nodejs">Node.js</Tag>
-              <Tag size="l" prefixIcon="mongodb">MongoDB</Tag>
-              <Tag size="l" prefixIcon="dotnet">.NET</Tag>
-              <Tag size="l" prefixIcon="flutter">Flutter</Tag>
-            </Row>
-          </RevealFx>
-          <RevealFx translateY="12" delay={0.35} fillWidth horizontal="center" paddingBottom="24">
-            <Row gap="24" wrap horizontal="center">
-              <Column gap="4" align="center">
-                <Text variant="heading-strong-xl" onBackground="brand-strong">4+</Text>
-                <Text variant="body-default-s" onBackground="neutral-weak">Years Learning</Text>
-              </Column>
-              <Column gap="4" align="center">
-                <Text variant="heading-strong-xl" onBackground="brand-strong">3.60</Text>
-                <Text variant="body-default-s" onBackground="neutral-weak">Dean's Lister</Text>
-              </Column>
-            </Row>
-          </RevealFx>
-          <RevealFx translateY="12" delay={0.4} fillWidth horizontal="center" paddingBottom="16">
-            <Row gap="12" wrap horizontal="center">
-              <Button
-                href="/TorrenoResume-FINAL.pdf"
-                variant="primary"
-                size="m"
-                prefixIcon="download"
-              >
-                Download Resume
-              </Button>
-              <Button
-                href={social.find(s => s.name === "GitHub")?.link || "https://github.com"}
-                variant="secondary"
-                size="m"
-                prefixIcon="github"
-              >
-                View GitHub
-              </Button>
-            </Row>
-          </RevealFx>
-          <RevealFx paddingTop="12" delay={0.5} horizontal="center" paddingLeft="12">
+          <RevealFx translateY="8" delay={0.2} horizontal="center" paddingBottom="20">
             <Button
               id="about"
               data-border="rounded"
@@ -125,6 +75,7 @@ export default function Home() {
               size="m"
               weight="default"
               arrowIcon
+              className={styles.buttonHover}
             >
               <Row gap="8" vertical="center" paddingRight="4">
                 {about.avatar.display && (
@@ -139,9 +90,53 @@ export default function Home() {
               </Row>
             </Button>
           </RevealFx>
+          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
+            <Heading wrap="balance" variant="display-strong-l">
+              {home.headline}
+            </Heading>
+          </RevealFx>
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
+            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+              {home.subline}
+            </Text>
+          </RevealFx>
+          <RevealFx translateY="12" delay={0.3} fillWidth horizontal="center" paddingBottom="24">
+            <Row gap="12" wrap horizontal="center">
+              <Tag size="l" prefixIcon="react" className={styles.tag}>React</Tag>
+              <Tag size="l" prefixIcon="nodejs" className={styles.tag}>Node.js</Tag>
+              <Tag size="l" prefixIcon="mongodb" className={styles.tag}>MongoDB</Tag>
+              <Tag size="l" prefixIcon="dotnet" className={styles.tag}>.NET</Tag>
+              <Tag size="l" prefixIcon="flutter" className={styles.tag}>Flutter</Tag>
+            </Row>
+          </RevealFx>
+          <RevealFx translateY="12" delay={0.55} fillWidth horizontal="center" paddingBottom="24">
+            <Row gap="24" wrap horizontal="center">
+              <Column gap="4" align="center" className={styles.statCard}>
+                <Text variant="heading-strong-xl" onBackground="brand-strong">4+</Text>
+                <Text variant="body-default-s" onBackground="neutral-weak">Years Learning</Text>
+              </Column>
+              <Column gap="4" align="center" className={styles.statCard}>
+                <Text variant="heading-strong-xl" onBackground="brand-strong">3.60</Text>
+                <Text variant="body-default-s" onBackground="neutral-weak">Dean's Lister</Text>
+              </Column>
+            </Row>
+          </RevealFx>
+          <RevealFx translateY="12" delay={0.6} fillWidth horizontal="center" paddingBottom="16">
+            <Row gap="12" wrap horizontal="center">
+              <Button
+                href="/TorrenoResume-FINAL.pdf"
+                variant="primary"
+                size="m"
+                prefixIcon="download"
+                className={styles.buttonHover}
+              >
+                Download Resume
+              </Button>
+            </Row>
+          </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
+      <RevealFx translateY="16" delay={0.7}>
         <Column fillWidth gap="24" horizontal="center" align="center" paddingTop="40">
           <Line maxWidth="s" />
           <Column gap="8" horizontal="center" align="center">
@@ -158,6 +153,7 @@ export default function Home() {
                 variant="secondary"
                 size="m"
                 prefixIcon={link.icon}
+                className={styles.buttonHover}
               >
                 {link.name}
               </Button>

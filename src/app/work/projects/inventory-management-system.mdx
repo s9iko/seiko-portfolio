@@ -12,60 +12,19 @@ team:
 
 ## Overview
 
-A robust desktop inventory management system built with Windows Forms and .NET Framework that demonstrates fundamental database-driven application development principles. This application enables users to efficiently manage product inventory with full CRUD operations, advanced search capabilities, and comprehensive data validation.
+A lightweight Windows Forms app that lets small teams manage products with fast CRUD, multi-filter search, and built-in validation. It keeps data clean, prevents duplicates, and calculates totals automatically.
 
-## Key Features
+## Highlights
+- Manage products (add / edit / delete) with supplier, date, and pricing details
+- Live filtering by supplier, date range, and price—great for quick lookups
+- Automatic total amount (Qty × Price) and guardrails to block bad data
+- DataGridView UX for quick edits plus safe multi-delete with confirmation
+- Parameterized queries everywhere to avoid SQL injection
 
-**Product Management:**
-- **CRUD Operations**: Add, update, and delete products with complete product details including name, quantity, price, supplier, and order date.
-- **Product Details Capture**: Comprehensive information collection for full inventory tracking and supplier management.
-- **Duplicate Prevention**: Intelligent checking for existing products before insertion to avoid data redundancy.
-
-**Advanced Search & Filtering:**
-- **Multi-Criteria Filtering**: Filter products by supplier, date range, price range, and total amount simultaneously.
-- **Dynamic Search**: Real-time filtering capabilities for quick product lookup and analysis.
-
-**Data Integrity & Validation:**
-- **Input Validation**: Enforces integer validation for quantity fields and decimal validation for price fields.
-- **Type Safety**: Ensures data consistency and prevents invalid entries from corrupting the database.
-- **Dynamic Calculations**: Automatically computes total amount (Quantity × Price) for inventory valuation.
-
-**User Interface:**
-- **Interactive DataGridView**: Row selection and display of products for easy updates and deletions.
-- **Bulk Operations**: Supports multi-row deletion with confirmation dialogs for safe data management.
-- **Intuitive Layout**: User-friendly interface designed for efficient inventory operations.
-
-**Security & Performance:**
-- **SQL Injection Prevention**: Parameterized queries throughout the application for secure database access.
-- **Data Validation**: Comprehensive client-side validation before database operations.
-
-## Technologies Used
-
-- **Frontend**: Windows Forms (C#)
-- **Backend**: ADO.NET with SqlClient
-- **Database**: SQL Server LocalDB (Database1.mdf)
-- **Framework**: .NET Framework 4.7.2
-- **Data Access**: Parameterized queries for secure database operations
-
-## Database Schema
-
-The Products table includes:
-- **ProductID**: Primary Key with auto-increment functionality
-- **ProductName**: Name of the product
-- **Quantity**: Stock quantity (integer)
-- **Price**: Unit price (decimal)
-- **Supplier**: Supplier information
-- **OrderDate**: Date of order
-- **TotalAmount**: Computed column (Quantity × Price) for inventory valuation
-
-## Challenges and Learnings
-
-Building this application taught me important lessons about database connectivity and parameterized queries. Implementing effective input validation required careful consideration of user experience while maintaining data integrity. The multi-criteria filtering feature demonstrated the importance of building flexible query logic that can handle various filter combinations.
-
-Designing the database schema with a computed column for TotalAmount showed how to leverage database-level calculations for efficiency and consistency. The bulk operations feature with confirmation dialogs helped me understand the importance of user confirmation for destructive actions.
+## Stack
+- Windows Forms (C#)
+- ADO.NET (SqlClient) on SQL Server LocalDB
+- .NET Framework 4.7.2
 
 ## Outcome
-
-The Inventory Management System is a fully functional desktop application that successfully demonstrates core principles of database-driven development. It provides a complete solution for small to medium-sized businesses to manage their product inventory efficiently with a user-friendly interface and robust data protection mechanisms.
-
-This project showcases proficiency in Windows Forms development, ADO.NET data access, SQL Server management, and building secure, user-centric applications with comprehensive data validation and integrity controls.
+Delivered a working desktop app that keeps inventory accurate, searches fast, and data safe—solid practice in WinForms, SQL Server, and defensive data handling.

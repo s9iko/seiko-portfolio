@@ -1,0 +1,59 @@
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animatedBackground {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      rgba(var(--brand-on-background-weak), 0.03),
+      rgba(var(--accent-on-background-weak), 0.03),
+      rgba(var(--brand-on-background-weak), 0.03)
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.statCard {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+.buttonHover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.tag {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}

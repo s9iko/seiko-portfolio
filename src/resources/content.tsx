@@ -94,7 +94,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        test commit Motivated Junior Full-Stack Developer with MERN stack experience. 
+        Motivated Junior Full-Stack Developer with MERN stack experience. 
         Strong programming foundation and an eye for UI design, eager to contribute and grow within a collaborative development team.
       </>
     ),
