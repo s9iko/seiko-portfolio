@@ -52,7 +52,7 @@ export default function Home() {
       />
       <Column fillWidth horizontal="center" gap="32">
         <Column maxWidth="xs" horizontal="center" align="center" gap="-1">
-          <RevealFx fillWidth horizontal="center" paddingTop="16" paddingBottom="24" paddingLeft="12">
+          <RevealFx fillWidth horizontal="center" paddingTop="16" paddingBottom="24" paddingLeft="12" delay={0}>
             <Row gap="8" horizontal="center" vertical="center">
               <span className={styles.availableDot}></span>
               <Text variant="body-default-m" onBackground="brand-strong">
@@ -60,16 +60,16 @@ export default function Home() {
               </Text>
             </Row>
           </RevealFx>
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="8">
+          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="8" delay={0.15}>
             <TypingHeadline greeting={home.headlineGreeting} name={home.headlineName} speed={150} pause={600} />
           </RevealFx>
 
-          <RevealFx translateY={8} delay={0.2} fillWidth horizontal="center" paddingBottom="32">
+          <RevealFx translateY={8} delay={0.3} fillWidth horizontal="center" paddingBottom="32">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx translateY={10} delay={0.25} horizontal="center" paddingBottom="16">
+          <RevealFx translateY={10} delay={0.45} horizontal="center" paddingBottom="16">
             <Button
               id="about"
               data-border="rounded"
@@ -93,6 +93,7 @@ export default function Home() {
               paddingTop="8"
               paddingBottom="24"
               paddingLeft="12"
+              delay={0.6}
             >
               <Badge
                 background="brand-alpha-weak"
@@ -108,7 +109,7 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
-          <RevealFx translateY="12" delay={0.3} fillWidth horizontal="center" paddingBottom="32">
+          <RevealFx translateY="12" delay={0.75} fillWidth horizontal="center" paddingBottom="32">
             <Column gap="20" horizontal="center" align="center">
               <Row gap="16" wrap horizontal="center">
                 <Tag size="l" prefixIcon="react" className={styles.tag}>React</Tag>
@@ -119,7 +120,7 @@ export default function Home() {
               </Row>
             </Column>
           </RevealFx>
-          <RevealFx translateY="12" delay={0.5} fillWidth horizontal="center" paddingBottom="0">
+          <RevealFx translateY="12" delay={0.9} fillWidth horizontal="center" paddingBottom="0">
             <Button
               href="/TorrenoResume-FINAL.pdf"
               variant="primary"
