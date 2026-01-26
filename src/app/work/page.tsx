@@ -1,6 +1,7 @@
 import { Column, Heading, Meta, Schema, RevealFx } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
+import styles from "./page.module.scss";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -29,7 +30,12 @@ export default function Work() {
         }}
       />
       <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="24">
-        <Heading marginBottom="l" variant="heading-strong-xl" align="center">
+        <Heading
+          marginBottom="l"
+          variant="display-strong-l"
+          align="center"
+          className={`${styles.animatedTitle} ${styles.boldTitle}`}
+        >
           {work.title}
         </Heading>
       </RevealFx>

@@ -62,7 +62,7 @@ const home: Home = {
   label: "Home",
   title: `s9iko's Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Let's build something great together</>,
+  headline: <>Hello! I'm Vaughn</>,
   featured: {
     display: true,
     title: <>Check out my projects</>,
@@ -151,16 +151,16 @@ const about: About = {
       {
         name: "De La Salle University – Dasmarinas",
         description: (
-          <>Bachelor of Science in Information Technology (Dean's Lister, GPA 3.60/4.00).</>
+          <>2022–2026 · Bachelor of Science in Information Technology (Dean's Lister, GPA 3.60/4.00).</>
         ),
       },
       {
         name: "Senior High School – STEM",
-        description: <>With High Honors.</>,
+        description: <>2020–2022 · With High Honors.</>,
       },
       {
         name: "Junior High School",
-        description: <>With Honors.</>,
+        description: <>2016–2020 · With Honors.</>,
       },
     ],
   },
@@ -232,6 +232,18 @@ const about: About = {
       },
     ],
   },
+  softSkills: {
+    display: true,
+    title: "Soft skills",
+    skills: [
+      "Teamwork",
+      "Effective Communication",
+      "Critical Thinking",
+      "Problem-Solving",
+      "Adaptability",
+      "Time Management",
+    ],
+  },
 };
 
 const blog: Blog = {
@@ -246,7 +258,7 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
+  title: "Vaughn's Projects",
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
