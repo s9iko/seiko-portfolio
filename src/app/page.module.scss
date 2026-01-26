@@ -1,5 +1,46 @@
+// Divider between hero and connect section
+.heroDivider {
+  border: none;
+  border-top: 2px solid rgba(255,255,255,0.08);
+  margin: 64px auto 48px auto;
+  width: 60%;
+  max-width: 420px;
+}
+
+// Tech stack colored icons
+.techIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+}
+
 .typingHeadline {
   line-height: 1.1;
+  font-size: 4.5rem;
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
+}
+.typingName {
+  display: inline-block;
+  margin-top: 0.5em;
+  font-size: 1.1em;
 }
 .typingName {
   display: inline-block;
