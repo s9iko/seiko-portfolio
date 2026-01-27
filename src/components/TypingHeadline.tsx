@@ -9,6 +9,7 @@ interface TypingHeadlineProps {
   name: string;
   speed?: number; // ms per character
   pause?: number; // ms pause between greeting and name
+  startDelay?: number; // ms delay after visible before typing starts
 }
 export default function TypingHeadline({ greeting, name, speed = 600, pause = 600, startDelay = 600 }: TypingHeadlineProps) {
   const safeGreeting = typeof greeting === 'string' ? greeting : '';
