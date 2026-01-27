@@ -14,6 +14,7 @@ import {
   SpacingToken,
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers } from "@/components";
+import ScrollToTopOnLoad from "@/components/ScrollToTopOnLoad";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 
 export async function generateMetadata() {
@@ -85,6 +86,9 @@ export default async function RootLayout({
                   const savedTheme = localStorage.getItem('data-theme');
                   const resolvedTheme = resolveTheme(savedTheme);
                   root.setAttribute('data-theme', resolvedTheme);
+
+                  // Prevent browser from restoring scroll position on navigation/load
+                  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch(e) {}
                   
                   // Apply any saved style overrides
                   const styleKeys = Object.keys(config);
@@ -113,6 +117,7 @@ export default async function RootLayout({
           padding="0"
           horizontal="center"
         >
+          <ScrollToTopOnLoad />
           <RevealFx fill position="absolute">
             <Background
               mask={{
