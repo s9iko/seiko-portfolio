@@ -166,34 +166,53 @@ export default function About() {
                 data-border="rounded"
               >
                 {social
-                      .filter((item) => item.essential)
-                      .map(
-                  (item) =>
-                    item.link && (
-                      <React.Fragment key={item.name}>
-                        <Row s={{ hide: true }}>
-                          <Button
-                            key={item.name}
-                            href={item.link}
-                            prefixIcon={item.icon}
-                            label={item.name}
-                            size="s"
-                            weight="default"
-                            variant="secondary"
-                          />
-                        </Row>
-                        <Row hide s={{ hide: false }}>
-                          <IconButton
-                            size="l"
-                            key={`${item.name}-icon`}
-                            href={item.link}
-                            icon={item.icon}
-                            variant="secondary"
-                          />
-                        </Row>
-                      </React.Fragment>
-                    ),
-                )}
+                  .filter((item) => item.essential)
+                  .map(
+                    (item) =>
+                      item.link && (
+                        <React.Fragment key={item.name}>
+                          <Row s={{ hide: true }}>
+                            <Button
+                              key={item.name}
+                              href={item.link}
+                              prefixIcon={item.icon}
+                              label={item.name}
+                              size="s"
+                              weight="default"
+                              variant="secondary"
+                            />
+                          </Row>
+                          <Row hide s={{ hide: false }}>
+                            <IconButton
+                              size="l"
+                              key={`${item.name}-icon`}
+                              href={item.link}
+                              icon={item.icon}
+                              variant="secondary"
+                            />
+                          </Row>
+                        </React.Fragment>
+                      ),
+                  )}
+                {/* LinkedIn Button/Icon */}
+                <Row s={{ hide: true }}>
+                  <Button
+                    href="https://www.linkedin.com/in/vaughn-torreno-92762b3a4/"
+                    prefixIcon="linkedin"
+                    label="LinkedIn"
+                    size="s"
+                    weight="default"
+                    variant="secondary"
+                  />
+                </Row>
+                <Row hide s={{ hide: false }}>
+                  <IconButton
+                    size="l"
+                    href="https://www.linkedin.com/in/vaughn-torreno-92762b3a4/"
+                    icon="linkedin"
+                    variant="secondary"
+                  />
+                </Row>
               </Row>
             )}
           </Column>
