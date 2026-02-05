@@ -14,8 +14,7 @@ import {
   Tag,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, social } from "@/resources";
-import { Mailchimp, ScrollReveal } from "@/components";
-import TypingHeadline from "@/components/TypingHeadline";
+import { Mailchimp, ScrollReveal, ParticlesBackground } from "@/components";
 import styles from "./page.module.scss";
 export async function generateMetadata() {
   return Meta.generate({
@@ -29,14 +28,16 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column
-      maxWidth="xl"
-      gap="56"
-      paddingY="32"
-      horizontal="center"
-      className={styles.animatedBackground}
-      style={{ minHeight: "100vh", justifyContent: "center" }}
-    >
+    <>
+      <ParticlesBackground />
+      <Column
+        maxWidth="xl"
+        gap="56"
+        paddingY="32"
+        horizontal="center"
+        className={styles.animatedBackground}
+        style={{ minHeight: "100vh", justifyContent: "center" }}
+      >
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -60,7 +61,11 @@ export default function Home() {
             </div>
             {/* Typing Headline */}
             <div className={styles.headlineWrapper}>
-              <TypingHeadline greeting={home.headlineGreeting} name={home.headlineName} speed={150} pause={600} />
+              <Heading wrap="balance" variant="display-strong-xl" className={`${styles.headline} ${styles.superComicFont}`}>
+                {home.headlineGreeting}
+                <br />
+                {home.headlineName}
+              </Heading>
             </div>
           </Row>
         </RevealFx>
@@ -129,6 +134,7 @@ export default function Home() {
           </Row>
         </Column>
       </ScrollReveal>
-    </Column>
+      </Column>
+    </>
   );
 }

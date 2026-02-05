@@ -1,5 +1,6 @@
 import { Column, Heading, Meta, Schema, RevealFx } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
+import { ParticlesBackground } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import styles from "./page.module.scss";
 
@@ -15,7 +16,9 @@ export async function generateMetadata() {
 
 export default function Work() {
   return (
-    <Column maxWidth="m" paddingTop="24">
+    <>
+      <ParticlesBackground />
+      <Column maxWidth="m" paddingTop="24">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -43,5 +46,6 @@ export default function Work() {
         <Projects />
       </RevealFx>
     </Column>
+    </>
   );
 }

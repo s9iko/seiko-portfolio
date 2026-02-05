@@ -14,6 +14,7 @@ import {
   RevealFx,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
+import { ParticlesBackground } from "@/components";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
@@ -51,8 +52,11 @@ export default function About() {
       items: about.technical.skills.map((skill) => skill.title),
     },
   ];
+
   return (
-    <Column maxWidth="m">
+    <>
+      <ParticlesBackground />
+      <Column maxWidth="m">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -359,6 +363,7 @@ export default function About() {
         </Column>
       </Row>
       </RevealFx>
-    </Column>
+      </Column>
+    </>
   );
 }
