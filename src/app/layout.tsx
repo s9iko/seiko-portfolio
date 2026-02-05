@@ -13,7 +13,7 @@ import {
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from "@/components";
+import { Footer, Header, RouteGuard, Providers, InitialLoader } from "@/components";
 import ScrollToTopOnLoad from "@/components/ScrollToTopOnLoad";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 
@@ -117,6 +117,7 @@ export default async function RootLayout({
           padding="0"
           horizontal="center"
         >
+          <InitialLoader />
           <ScrollToTopOnLoad />
           <RevealFx fill position="absolute">
             <Background

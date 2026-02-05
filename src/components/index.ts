@@ -9,3 +9,4 @@ export { ScrollToHash } from "@/components/ScrollToHash";
 export { ScrollReveal } from "@/components/ScrollReveal";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
+export { InitialLoader } from "@/components/InitialLoader";
