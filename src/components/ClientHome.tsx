@@ -12,6 +12,7 @@ import {
 import { home, about, person, baseURL, social } from "@/resources";
 import TextType from "@/components/TextType";
 import { Mailchimp, ScrollReveal, ParticlesBackground } from "@/components";
+import ResumeButton from "@/components/ResumeButton";
 import styles from "@/app/page.module.scss";
 
 export default function ClientHome() {
@@ -92,6 +93,7 @@ export default function ClientHome() {
                 LinkedIn
               </Button>
             </Row>
+            <ResumeButton />
           </Column>
         </ScrollReveal>
       </Column>

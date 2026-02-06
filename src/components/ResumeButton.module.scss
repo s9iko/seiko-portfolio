@@ -1,0 +1,47 @@
+.uiverseButton {
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 25px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5em 1.5em;
+}
+
+/* Ensure any SVG icons or platform styles don't override color */
+.uiverseButton svg {
+  fill: #ffffff !important;
+}
+
+/* Ensure text fill on some browsers */
+.uiverseButton {
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.uiverseButton::before {
+  margin-left: auto;
+}
+
+.uiverseButton::after,
+.uiverseButton::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #ffffff;
+  display: block;
+  transition: 0.5s;
+}
+
+.uiverseButton:hover::after,
+.uiverseButton:hover::before {
+  width: 100%;
+}
+
+.resumeContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
