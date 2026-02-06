@@ -90,6 +90,61 @@ const about: About = {
     display: false,
     link: "https://cal.com",
   },
+  technical: {
+    display: true,
+    title: "Skills Summary",
+    skills: [
+      {
+        title: "Programming Languages",
+        description: <>C#, JavaScript, HTML, CSS, PHP, Python</>,
+        tags: [
+          { name: "C#", icon: "dotnet" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "HTML", icon: "html" },
+          { name: "CSS", icon: "css" },
+          { name: "PHP", icon: "php" },
+          { name: "Python", icon: "python" },
+        ],
+        images: [],
+      },
+      {
+        title: "Frameworks",
+        description: <>MERN Stack (MongoDB, Express, React, Node), ASP.NET, Flutter</>,
+        tags: [
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "Express", icon: "code" },
+          { name: "React", icon: "react" },
+          { name: "Node.js", icon: "nodejs" },
+          { name: "ASP.NET", icon: "code" },
+          { name: "Flutter", icon: "flutter" },
+        ],
+        images: [],
+      },
+      {
+        title: "Tools",
+        description: <>Visual Studio, Android Studio, GitHub, Figma, Canva, Adobe Photoshop & Illustrator</>,
+        tags: [
+          { name: "Visual Studio", icon: "code" },
+          { name: "Android Studio", icon: "code" },
+          { name: "GitHub", icon: "github" },
+          { name: "Figma", icon: "figma" },
+          { name: "Canva", icon: "sparkles" },
+          { name: "Photoshop", icon: "photoshop" },
+          { name: "Illustrator", icon: "illustrator" },
+        ],
+        images: [],
+      },
+      {
+        title: "Databases",
+        description: <>MongoDB, MySQL</>,
+        tags: [
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "MySQL", icon: "mysql" },
+        ],
+        images: [],
+      },
+    ],
+  },
   intro: {
     display: true,
     title: "Introduction",
@@ -101,31 +156,16 @@ const about: About = {
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "Web Development",
+        company: "Web Developer",
         timeframe: "Ongoing",
-        role: "Junior Web Developer",
+        role: "Web Developer",
         achievements: [
-          <>
-            Developed and deployed web projects with a focus on performance, responsiveness, and
-            smooth user experience.
-          </>,
-          <>
-            Built full-stack features across MERN and ASP.NET stacks, ensuring clean, maintainable
-            code.
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "Video Editing",
-        timeframe: "Ongoing",
-        role: "Video Editor",
-        achievements: [
-          <>Edited a variety of video content using Vegas Pro and CapCut.</>,
+          <>Delivered web projects focusing on performance, accessibility, and responsiveness.</>,
+          <>Collaborated with team members to enhance development processes and workflow efficiency.</>,
         ],
         images: [],
       },
@@ -134,101 +174,47 @@ const about: About = {
         timeframe: "Ongoing",
         role: "Designer",
         achievements: [
-          <>
-            Designed user interfaces and digital graphics using Figma, Canva, Adobe Illustrator, and
-            Photoshop.
-          </>,
-          <>Created assets and layouts that kept products visually consistent and easy to use.</>,
+          <>Designed UI screens and digital graphics using Figma, Canva, Illustrator, and Photoshop.</>,
+          <>Created wireframes and high-fidelity prototypes to validate user flows.</>,
+        ],
+        images: [],
+      },
+
+      {
+        company: "Hardware & Software Troubleshooting",
+        timeframe: "Ongoing",
+        role: "IT Support",
+        achievements: [
+          <>Resolved hardware and software issues for desktops, laptops, and dev environments.</>,
+          <>Performed OS, driver, and basic network fixes.</>,
+        ],
+        images: [],
+      },
+
+      {
+        company: "Video Editor",
+        timeframe: "Ongoing",
+        role: "Video Editor",
+        achievements: [
+          <>Edited short and long form videos using Vegas Pro and CapCut.</>,
         ],
         images: [],
       },
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "De La Salle University – Dasmarinas",
+        name: "De La Salle University – Dasmariñas Campus",
         description: (
-          <>2022–2026 · Bachelor of Science in Information Technology (Dean's Lister, GPA 3.60/4.00).</>
+          <>2022–Present · Bachelor of Science in Information Technology<br />Dean’s Lister | GPA 3.60 / 4.00</>
         ),
       },
       {
-        name: "Senior High School – STEM",
-        description: <>2020–2022 · With High Honors.</>,
-      },
-      {
-        name: "Junior High School",
-        description: <>2016–2020 · With Honors.</>,
-      },
-    ],
-  },
-  technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
-    skills: [
-      {
-        title: "Full-stack Web Development",
-        description: (
-          <>Build and ship responsive web apps with MERN and ASP.NET (Web Forms, MVC, Core).</>
-        ),
-        tags: [
-          { name: "JavaScript", icon: "javascript" },
-          { name: "React", icon: "react" },
-          { name: "Node.js", icon: "nodejs" },
-          { name: "ASP.NET", icon: "code" },
-        ],
-        images: [],
-      },
-      {
-        title: "Programming Languages",
-        description: <>Work in C#, JavaScript, PHP, Python, and HTML.</>,
-        tags: [
-          { name: "C#", icon: "dotnet" },
-          { name: "JavaScript", icon: "javascript" },
-          { name: "PHP", icon: "php" },
-          { name: "Python", icon: "python" },
-        ],
-        images: [],
-      },
-      {
-        title: "Databases",
-        description: <>Model and manage data with MongoDB and MySQL.</>,
-        tags: [
-          { name: "MongoDB", icon: "mongodb" },
-          { name: "MySQL", icon: "mysql" },
-        ],
-        images: [],
-      },
-      {
-        title: "Mobile Development",
-        description: <>Prototype mobile experiences with Flutter and Android Studio.</>,
-        tags: [
-          { name: "Flutter", icon: "flutter" },
-          { name: "Android", icon: "code" },
-        ],
-        images: [],
-      },
-      {
-        title: "UI/UX & Design",
-        description: <>Design interfaces and graphics in Figma, Canva, Photoshop, and Illustrator.</>,
-        tags: [
-          { name: "Figma", icon: "figma" },
-          { name: "Canva", icon: "sparkles" },
-          { name: "Photoshop", icon: "photoshop" },
-          { name: "Illustrator", icon: "illustrator" },
-        ],
-        images: [],
-      },
-      {
-        title: "Video Editing",
-        description: <>Edit and finish content in Vegas Pro and CapCut.</>,
-        tags: [
-          { name: "Vegas Pro", icon: "sparkles" },
-          { name: "CapCut", icon: "sparkles" },
-        ],
-        images: [],
+        name: "Junior High School with Honors | Senior High School (STEM) with High Honors",
+        description: <>2016–2022</>,
       },
     ],
   },
