@@ -68,3 +68,17 @@
   --scheme-neutral-600-50: rgba(137,152,159,0.5);
   /*
 }*/
+
+  /* Prevent layout overlays from blocking scrolling and ensure normal overscroll behavior */
+  html, body, #__next {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-y: auto !important;
+    overscroll-behavior-y: auto !important;
+  }
+
+  /* Make sure full-screen canvases/backgrounds don't capture pointer events */
+  .particlesCanvas,
+  .animatedBackground::before {
+    pointer-events: none !important;
+  }

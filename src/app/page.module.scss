@@ -40,7 +40,12 @@
   overflow: visible;
   clip-path: none;
   min-height: 440px;
+  height: 100%;
   padding-right: 6vw;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   @media (max-width: 900px) {
     flex-direction: column;
     gap: 24px;
@@ -124,7 +129,11 @@
   min-width: 0;
   /* Match the gentle float of the avatar */
   animation: gentleFloat 2s ease-in-out infinite;
-  margin-top: 40px;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
   @media (max-width: 900px) {
     margin-top: 28px;
@@ -192,6 +201,12 @@
 }
 .animatedBackground {
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Start content at top so sections stack naturally; hero will fill viewport */
+  justify-content: flex-start;
   
   &::before {
     content: '';
@@ -313,14 +328,28 @@
 
 .connectSection {
   position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 48px 24px 64px;
+  margin-top: 24px;
   border-radius: 20px;
   border: 1px solid rgba(var(--neutral-border-weak), 0.4);
   background: radial-gradient(circle at 50% 20%, rgba(var(--brand-on-background-weak), 0.08), transparent 55%),
     radial-gradient(circle at 10% 80%, rgba(var(--accent-on-background-weak), 0.06), transparent 45%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
-  overflow: hidden;
+  overflow: visible;
+}
+
+/* Ensure inner content centers and doesn't float to the side */
+.connectSection > * {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .connectSection::after {
@@ -368,4 +397,17 @@
     background: rgba(var(--brand-alpha-weak), 0.14);
     box-shadow: 0 16px 40px rgba(var(--brand-on-background-weak), 0.2);
   }
+}
+
+.heroInner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Make hero occupy the full visible viewport below the fixed header and center content */
+  height: calc(100vh - 80px);
+  box-sizing: border-box;
+  margin: 0;
+  /* Nudge slightly upward for visual centering */
+  transform: translateY(-4vh);
 }

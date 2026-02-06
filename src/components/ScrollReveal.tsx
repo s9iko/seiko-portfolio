@@ -14,9 +14,8 @@ export function ScrollReveal({ children, className = '' }: ScrollRevealProps) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        // Toggle visibility so the reveal can replay when re-entering viewport
+        setIsVisible(entry.isIntersecting);
       },
       {
         threshold: 0.2,

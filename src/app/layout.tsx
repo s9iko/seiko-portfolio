@@ -10,7 +10,9 @@ import {
   Meta,
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers, InitialLoader } from "@/components";
-import ScrollToTopOnLoad from "@/components/ScrollToTopOnLoad";
+// Temporarily disabled to isolate unexpected scroll resets
+// import ScrollToTopOnLoad from "@/components/ScrollToTopOnLoad";
+import DebugScrollMonitor from "@/components/DebugScrollMonitor";
 import { baseURL, fonts, style, dataStyle, home } from "@/resources";
 
 export async function generateMetadata() {
@@ -114,7 +116,8 @@ export default async function RootLayout({
           horizontal="center"
         >
           <InitialLoader />
-          <ScrollToTopOnLoad />
+          {/* ScrollToTopOnLoad temporarily disabled for debugging scroll reset */}
+          <DebugScrollMonitor />
           <Flex fillWidth minHeight="16" s={{ hide: true }} />
           <Header />
           <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
