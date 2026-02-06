@@ -16,7 +16,12 @@
   font-size: 1em;
   color: #fff;
   opacity: 1;
-  transition: opacity 0.2s;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 .text-type__cursor--hidden {
   opacity: 0;
