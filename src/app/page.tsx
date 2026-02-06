@@ -14,6 +14,7 @@ import {
   Tag,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, social } from "@/resources";
+import TextType from "@/components/TextType";
 import { Mailchimp, ScrollReveal, ParticlesBackground } from "@/components";
 import styles from "./page.module.scss";
 export async function generateMetadata() {
@@ -55,9 +56,21 @@ export default function Home() {
         {/* Hero Section with Face and Typing Headline */}
         <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="8" delay={0.15}>
           <Row gap="48" horizontal="center" vertical="center" className={styles.heroRow}>
-            {/* Face Avatar */}
-            <div className={styles.faceAvatar}>
+            {/* Face Avatar and Typing Effect */}
+            <div className={styles.faceAvatar} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <img src="/images/killuaface.svg" alt="Avatar" width="280" height="280" />
+              <div style={{ marginTop: 16 }}>
+                <TextType
+                  text={["Web Developer", "UI/UX Designer", "QA Tester"]}
+                  typingSpeed={75}
+                  pauseDuration={1500}
+                  showCursor
+                  cursorCharacter="_"
+                  deletingSpeed={50}
+                  cursorBlinkDuration={0.5}
+                  className={styles.textTypeCustom}
+                />
+              </div>
             </div>
             {/* Typing Headline */}
             <div className={styles.headlineWrapper}>

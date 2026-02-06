@@ -1,0 +1,23 @@
+/* TextType.css */
+.text-type {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+.text-type__content {
+  display: inline-block;
+}
+.text-type__cursor {
+  display: inline-block;
+  margin-left: 0.1em;
+  font-size: 1em;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.text-type__cursor--hidden {
+  opacity: 0;
+}
