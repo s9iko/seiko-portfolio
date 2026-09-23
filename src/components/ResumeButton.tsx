@@ -5,7 +5,7 @@ export default function ResumeButton() {
   return (
     <div className={styles.resumeContainer}>
       <a
-        href="/TorrenoResume-FINAL.pdf"
+        href="/Torreno_Vaughn_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.uiverseButton}

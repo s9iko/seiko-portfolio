@@ -7,7 +7,7 @@ export { RouteGuard } from "@/components/RouteGuard";
 export { Providers } from "@/components/Providers";
 export { ScrollToHash } from "@/components/ScrollToHash";
 export { ScrollReveal } from "@/components/ScrollReveal";
-export { ThemeToggle } from "@/components/ThemeToggle";
+// ThemeToggle intentionally removed; dark mode enforced as default
 export { CustomMDX } from "@/components/mdx";
 export { InitialLoader } from "@/components/InitialLoader";
 export { ParticlesBackground } from "@/components/ParticlesBackground";

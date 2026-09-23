@@ -1,13 +1,7 @@
 "use client";
 
-import {
-  Carousel,
-  Column,
-  Flex,
-  Heading,
-  SmartLink,
-  Text,
-} from "@once-ui-system/core";
+import { Column, Flex, Heading, SmartLink, Text } from "@once-ui-system/core";
+import ImageCarousel from "./ImageCarousel";
 
 interface ProjectCardProps {
   href: string;
@@ -29,12 +23,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Column fillWidth gap="m">
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
-          slide: image,
-          alt: title,
-        }))}
+      <ImageCarousel
+        items={images.map((image) => ({ slide: image, alt: title }))}
       />
       <Flex
         s={{ direction: "column" }}

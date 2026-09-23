@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
 import { routes, display, person, about, work } from "@/resources";
-import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
@@ -129,12 +128,7 @@ export const Header = () => {
                 </>
               )}
               
-              {display.themeSwitcher && (
-                <>
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
-                  <ThemeToggle />
-                </>
-              )}
+              {/* Theme switcher removed - default dark mode enforced */}
             </Row>
           </Row>
         </Row>
@@ -146,9 +140,7 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex s={{ hide: true }}>
-              {display.time && <TimeDisplay timeZone={person.location} />}
-            </Flex>
+            {display.time && <TimeDisplay timeZone={person.location} />}
           </Flex>
         </Flex>
       </Row>

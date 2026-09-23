@@ -1,0 +1,99 @@
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+.viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.track {
+  display: flex;
+  transition: transform 360ms cubic-bezier(.22,.9,.32,1);
+  will-change: transform;
+}
+.slide {
+  flex: 0 0 100%;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.img {
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  display: block;
+  background: #0a0a0a;
+}
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: white;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 180ms ease, transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+.navLeft { left: -56px; }
+.navRight { right: -56px; }
+.indicators { display:flex; gap:12px; margin-top:12px; align-items:center; justify-content:center; }
+.dots { display:flex; gap:8px; }
+.dot {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+  aspect-ratio: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+.dotActive { background: rgba(255,255,255,0.95); transform: scale(1.6); border-color: rgba(255,255,255,0.95); }
+
+.dot { cursor: pointer; }
+.dot:focus { outline: 2px solid rgba(255,255,255,0.6); }
+
+.nav:hover { background: rgba(255,255,255,0.12); transform: translateY(-50%) scale(1.04); }
+.nav:active { transform: translateY(-50%) scale(0.98); }
+.nav:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.9); }
+
+@media (max-width: 720px) {
+  .navLeft, .navRight { left: auto; right: auto; position: static; transform: none; box-shadow: none; }
+  .frame { gap: 8px; }
+  .indicators { order: 2; margin-top: 8px; }
+  .controlsRow { display:flex; gap:12px; align-items:center; }
+}
+
+@media (max-width: 960px) {
+  .img {
+    max-height: 360px;
+  }
+}
+

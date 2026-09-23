@@ -18,6 +18,7 @@ import {
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
+import ClientImageGallery from "@/components/ClientImageGallery";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
 
@@ -118,9 +119,7 @@ export default async function Project({
           </Text>
         </Row>
       </Row>
-      {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
-      )}
+      {post.metadata.images.length > 0 && <ClientImageGallery images={post.metadata.images} alt={post.metadata.title} />}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
       </Column>
