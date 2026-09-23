@@ -16,6 +16,17 @@ export function Projects({ range, exclude }: ProjectsProps) {
   }
 
   const sortedProjects = allProjects.sort((a, b) => {
+    // Prefer explicit `order` frontmatter if provided, otherwise fall back to publishedAt (newest first)
+    const aOrder = a.metadata.order ?? null;
+    const bOrder = b.metadata.order ?? null;
+
+    if (aOrder !== null || bOrder !== null) {
+      // If one of them is null, treat null as Infinity so defined orders come first
+      const aVal = aOrder === null ? Infinity : aOrder;
+      const bVal = bOrder === null ? Infinity : bOrder;
+      return aVal - bVal;
+    }
+
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 

@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Vaughn Benedict",
   lastName: "Torreno",
   name: "Vaughn Benedict Torreno",
-  role: "Junior Web Developer",
+  role: "Full-stack Web Developer",
   avatar: "/images/avatar.jpg",
   email: "vaughntorreno@gmail.com",
   location: "Asia/Manila", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -96,53 +96,50 @@ const about: About = {
     skills: [
       {
         title: "Programming Languages",
-        description: <>C#, JavaScript, HTML, CSS, PHP, Python</>,
         tags: [
-          { name: "C#", icon: "dotnet" },
-          { name: "JavaScript", icon: "javascript" },
-          { name: "HTML", icon: "html" },
-          { name: "CSS", icon: "css" },
-          { name: "PHP", icon: "php" },
-          { name: "Python", icon: "python" },
+          { name: "JavaScript"},
+          { name: "TypeScript"},
+          { name: "PHP"},
+          { name: "Python"},
+          { name: "C#"},
         ],
         images: [],
       },
       {
         title: "Frameworks",
-        description: <>MERN Stack (MongoDB, Express, React, Node), ASP.NET, Flutter</>,
         tags: [
-          { name: "MongoDB", icon: "mongodb" },
-          { name: "Express", icon: "code" },
-          { name: "React", icon: "react" },
-          { name: "Node.js", icon: "nodejs" },
-          { name: "ASP.NET", icon: "code" },
-          { name: "Flutter", icon: "flutter" },
+          { name: "REACT"},
+          { name: "Next.js"},
+          { name: "Express"},
+          { name: "MERN"},
+          { name: "ASP.NET"},
+        ],
+        images: [],
+      },      
+      {
+        title: "Databases",
+        tags: [
+          { name: "MongoDB"},
+          { name: "MySQL"},
+          { name: "PostgreSQL"},
+          { name: "SupaBase"},
+          { name: "SQLite"},
         ],
         images: [],
       },
       {
         title: "Tools",
-        description: <>Visual Studio, Android Studio, GitHub, Figma, Canva, Adobe Photoshop & Illustrator</>,
         tags: [
-          { name: "Visual Studio", icon: "code" },
-          { name: "Android Studio", icon: "code" },
-          { name: "GitHub", icon: "github" },
-          { name: "Figma", icon: "figma" },
-          { name: "Canva", icon: "sparkles" },
-          { name: "Photoshop", icon: "photoshop" },
-          { name: "Illustrator", icon: "illustrator" },
+          { name: "Visual Studio"},
+          { name: "GitHub"},
+          { name: "Figma"},
+          { name: "Canva"},
+          { name: "Photoshop"},
+          { name: "Illustrator"},
         ],
         images: [],
       },
-      {
-        title: "Databases",
-        description: <>MongoDB, MySQL</>,
-        tags: [
-          { name: "MongoDB", icon: "mongodb" },
-          { name: "MySQL", icon: "mysql" },
-        ],
-        images: [],
-      },
+
     ],
   },
   intro: {
@@ -150,8 +147,8 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Motivated Junior Full-Stack Developer with MERN stack experience. 
-        Strong programming foundation and an eye for UI design, eager to contribute and grow within a collaborative development team.
+        Hello! I’m a full-stack developer and designer who prioritizes user experience in everything I build. 
+        I enjoy creating intuitive and seamless web applications that are not only functional and reliable, but also simple and enjoyable to use.
       </>
     ),
   },
@@ -160,43 +157,16 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Web Developer",
-        timeframe: "Ongoing",
-        role: "Web Developer",
+        company: "Analog Devices",
+        timeframe: "March - June 2026",
+        role: "Intern",
         achievements: [
-          <>Delivered web projects focusing on performance, accessibility, and responsiveness.</>,
-          <>Collaborated with team members to enhance development processes and workflow efficiency.</>,
-        ],
-        images: [],
-      },
-      {
-        company: "UI/UX & Graphic Design",
-        timeframe: "Ongoing",
-        role: "Designer",
-        achievements: [
-          <>Designed UI screens and digital graphics using Figma, Canva, Illustrator, and Photoshop.</>,
-          <>Created wireframes and high-fidelity prototypes to validate user flows.</>,
-        ],
-        images: [],
-      },
-
-      {
-        company: "Hardware & Software Troubleshooting",
-        timeframe: "Ongoing",
-        role: "IT Support",
-        achievements: [
-          <>Resolved hardware and software issues for desktops, laptops, and dev environments.</>,
-          <>Performed OS, driver, and basic network fixes.</>,
-        ],
-        images: [],
-      },
-
-      {
-        company: "Video Editor",
-        timeframe: "Ongoing",
-        role: "Video Editor",
-        achievements: [
-          <>Edited short and long form videos using Vegas Pro and CapCut.</>,
+          <>Developed and deployed a full-stack internal Project Tracker system enabling engineering teams
+          to efficiently manage project lifecycles, requests, and workflows.</>,
+          <>Gathered requirements directly from engineers and translated feedback into system
+          enhancements..</>,
+          <>Refined an existing ticketing system by implementing enhancements and refinements based on
+          feedback.</>
         ],
         images: [],
       },
@@ -209,13 +179,10 @@ const about: About = {
       {
         name: "De La Salle University – Dasmariñas Campus",
         description: (
-          <>2022–Present · Bachelor of Science in Information Technology<br />Dean’s Lister | GPA 3.60 / 4.00</>
+          <>2022 - 2026 · Bachelor of Science in Information Technology<br />Dean’s Lister | GPA 3.60 / 4.00
+          <br /><br />Junior High School with Honors | Senior High School (STEM) with High Honors</>
         ),
-      },
-      {
-        name: "Junior High School with Honors | Senior High School (STEM) with High Honors",
-        description: <>2016–2022</>,
-      },
+      }
     ],
   },
   softSkills: {
