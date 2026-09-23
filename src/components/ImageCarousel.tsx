@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import styles from "./ImageCarousel.module.scss";
+import Lightbox from "./Lightbox";
 
 interface Item {
   slide: string;
@@ -18,6 +19,8 @@ export const ImageCarousel: React.FC<Props> = ({ items = [], initial = 0 }) => {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const queueRef = useRef<number[]>([]);
   const runningRef = useRef(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const clamp = (v: number) => Math.max(0, Math.min(items.length - 1, v));
 
@@ -48,7 +51,8 @@ export const ImageCarousel: React.FC<Props> = ({ items = [], initial = 0 }) => {
   const next = () => push(index + 1);
 
   return (
-    <div className={styles.frame}>
+    <>
+      <div className={styles.frame}>
       <div className={styles.viewport}>
         <div
           ref={trackRef}
@@ -57,7 +61,15 @@ export const ImageCarousel: React.FC<Props> = ({ items = [], initial = 0 }) => {
         >
           {items.map((it, i) => (
             <div className={styles.slide} key={i}>
-              <img src={it.slide} alt={it.alt || ""} className={styles.img} />
+              <img
+                src={it.slide}
+                alt={it.alt || ""}
+                className={styles.img}
+                onClick={() => {
+                  setLightboxOpen(true);
+                  setLightboxIndex(i);
+                }}
+              />
             </div>
           ))}
         </div>
@@ -91,6 +103,14 @@ export const ImageCarousel: React.FC<Props> = ({ items = [], initial = 0 }) => {
         </div>
       </div>
     </div>
+      {lightboxOpen && (
+        <Lightbox
+          items={items}
+          startIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
+    </>
   );
 };
 
